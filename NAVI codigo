@@ -1,0 +1,256 @@
+"""
+Created on Sat Dec 19 20:04:22 2020
+
+@author: Thiago
+"""
+
+import numpy as np
+import math
+import operator
+
+def main(): #A função main só serve para rodar as funções dos itens, direcionando o usuário
+    print()
+    print("=======================================")
+    print("Bem Vindo ao Desafio de Python da NAVI")
+    print("=======================================")
+    print()
+    print("Você deverá escolher qual teste deseja fazer, DIGITANDO o número correspondente...")
+    print()
+    chave = True
+    while chave:
+        print("1 - Item 1")
+        print("2 - Item 2")
+        print("3 - Item 3")
+        print("4 - SAIR DO PROGRAMA")
+        print()
+        escolha = int(input("Digite com qual item do Desafio de Python da NAVI você deseja trabalhar: "))
+        
+
+        if escolha == 1:
+            item_1()
+            print()
+            print("Você terminou o item 1, deseja continuar com os testes? ")
+            print()
+            print("1 - SIM")
+            print("2 - NÃO")        
+            print()
+            continuar = int(input("Digite :"))
+            print()
+            if continuar == 2:
+                print("Obrigado pela Participação")
+                chave = False
+
+            
+            elif continuar == 1:
+                chave = True
+
+            else:
+                chave2 = True
+                while chave2:
+                    print("===================================")
+                    print("Você deve digitar um valor vállido!")
+                    print()
+                    print("Você terminou o item 1, deseja continuar com os testes? ")
+                    print("1 - SIM")
+                    print("2 - NÃO")
+                    continuar = int(input("Digite :"))
+                    if continuar == 1:
+                        chave2 = False
+                    elif continuar == 2:
+                        chave2 = False
+                        chave = False
+                        print()
+                        print("Obrigado pela Participação")
+                        return
+                                
+        elif escolha == 2:  
+            item_2()
+            print()
+            print("Você terminou o item 2, deseja continuar com os testes? ")
+            print()
+            print("1 - SIM")
+            print("2 - NÃO")        
+            print()
+            continuar = int(input("Digite :"))
+            print()
+            if continuar == 2:
+                print("Obrigado pela Participação")
+                chave = False
+            
+            elif continuar == 1:
+                chave = True
+
+            else:
+                chave2 = True
+                while chave2:
+                    print("===================================")
+                    print("Você deve digitar um valor vállido!")
+                    print()
+                    print("Você terminou o item 2, deseja continuar com os testes? ")
+                    print("1 - SIM")
+                    print("2 - NÃO")
+                    continuar = int(input("Digite :"))
+                    if continuar == 1:
+                        chave2 = False
+                    elif continuar == 2:
+                        chave2 = False
+                        chave = False
+                        print()
+                        print("Obrigado pela Participação")
+                        return
+                    
+        
+        elif escolha == 3:
+            item_3()
+            print()
+            print("Você terminou o item 3, deseja continuar com os testes? ")
+            print()
+            print("1 - SIM")
+            print("2 - NÃO")        
+            print()
+            continuar = int(input("Digite :"))
+            print()
+            if continuar == 2:
+                print("Obrigado pela Participação")
+                chave = False
+            
+            elif continuar == 1:
+                chave = True
+
+            else:
+                chave2 = True
+                while chave2:
+                    print("===================================")
+                    print("Você deve digitar um valor vállido!")
+                    print()
+                    print("Você terminou o item 3, deseja continuar com os testes? ")
+                    print("1 - SIM")
+                    print("2 - NÃO")
+                    continuar = int(input("Digite :"))
+                    if continuar == 1:
+                        chave2 = False
+                    elif continuar == 2:
+                        chave2 = False
+                        chave = False
+                        print()
+                        print("Obrigado pela Participação")
+                        return
+    
+        elif escolha == 4:
+            print()
+            print("Você deseja realmente Sair do Programa?")
+            print()
+            print("1 - SIM")
+            print("2 - NÃO")
+            print()
+            decisao = int(input("Digite: "))
+            print()
+            if decisao == 1:
+                print("Obrigado pela Participação")
+                print()
+                chave = False
+                return
+            elif decisao == 2:
+                print("Ok, então continuemos...")
+                print()         
+                
+            else:
+                print("Você deve digitar um valor vállido, ou digite 4 para SAIR")
+            
+    
+
+def item_1():
+    a= 0
+    b = 5000000
+    
+    mult1 = 37
+    mult2 = 49
+
+    contador = 0
+    
+    while a <= b:
+        a += 2
+        if a % mult1 == 0 and a % mult2 == 0:
+            contador += 1
+    print()
+    print()
+    print()
+    print()
+    print("========")
+    print("RESPOSTA")
+    print("========")
+    print ("O número de múltiplos PARES de 37 e 49 no intervalo de 1 a 5 Milhões é: ",contador)
+    
+    return
+
+def item_2():
+    
+    vetor_x = []
+    n = 10
+    i = 1
+    while i<=n:
+        if i % 2 == 0:
+            vetor_x.append(3**i + 7*(math.factorial(i)))
+            
+        else:
+            vetor_x.append(2**i + 4*(np.log(i)))
+        
+        i += 1
+    
+    media = round(np.mean(vetor_x), 2)
+    maximo = max(vetor_x)
+    
+    for i in range (len(vetor_x)):
+        if vetor_x[i] == maximo:
+            posicao = i
+    
+    print()
+    print()
+    print()
+    print()
+    print("========")
+    print("RESPOSTA")
+    print("========")
+    print( "A posição do maior elemento da do Vetor X é: ")
+    print(posicao)
+    
+    print(" A média dos valor do Vetor X é: ")
+    print(media)
+            
+
+    
+    return
+    
+def item_3():
+    
+    n = 5
+    alunos = []
+    notas = []
+    print()
+    print("Você deve digitar o nome de 5 alunos e suas respectivas notas")
+    for i in range (n):
+        print()
+        nome = str(input("Digite o nome do Aluno: "))
+        alunos.append(nome)
+        nota = int(input("Digite a nota: "))
+        notas.append(nota)
+    
+    dic = dict(zip(alunos,notas))
+    print(dic)
+    maior_nota = max(dic.items(), key=operator.itemgetter(1))[1]
+    maior_aluno = max(dic.items(), key=operator.itemgetter(1))[0]
+
+    print()
+    print()
+    print()
+    print()
+    print("========")
+    print("RESPOSTA")
+    print("========")
+    print("O Aluno que tirou a maior nota é: ", maior_aluno)    
+    print("E sua nota foi: ", maior_nota)
+    
+    return
+    
+main()
+
